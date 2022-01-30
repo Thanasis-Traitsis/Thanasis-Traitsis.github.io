@@ -1,0 +1,57 @@
+.footer{
+
+    margin-top: 6em;
+    background: $primary-color;
+
+    &__text{
+        color: $bg-color;
+        font-size: $fs-p2;
+    }
+
+    &__line{
+        margin: auto;
+        width: 60%;
+        height: 1px;
+        background: $bg-color;      
+    }
+
+    &__boxes{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        padding: 1em;
+    }
+
+    &__box{
+        width: 40px;
+        height: 40px;
+        border: 1px solid $bg-color;
+
+        &:hover{
+            background: $secondary-color;
+            border: 1px solid $secondary-color;
+        }
+    }
+
+    &__icon{
+        display: flex;
+        height: 100%;  
+        align-items: center;
+        justify-content: center;
+
+        color: $bg-color;
+        font-size: 2rem;
+
+        &:hover{
+            color: $primary-color;
+        }
+    }
+
+    &__copyright{
+        padding: 1em 0 1em;
+        font-size: $fs-p2;
+        text-align: center;
+        color: $bg-color;
+    }
+}
