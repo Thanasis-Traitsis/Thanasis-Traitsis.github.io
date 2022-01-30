@@ -215,11 +215,13 @@ const message_option =
     }
 
     form.addEventListener('submit', (e) => {
+        e.preventDefault();
         validateInputs();
         gsap.to(".contact__message-complete", {opacity: 0, duration: 1});
         gsap.to(".contact__message-error", {opacity: 0, duration: 1});
         if(!formIsValid){
             gsap.to(".contact__message-error", {opacity: 1, duration: 1});
+            // e.preventDefault();
         } 
         else{
             msgComplete.innerHTML = message_option[2];
@@ -227,6 +229,7 @@ const message_option =
             gsap.to(".contact__message-complete", {opacity: 1, duration: 1});
             form.reset();
             gsap.set(validsvg,  {opacity: 0, duration: 1});
+            return true;
         }
     });  
 
