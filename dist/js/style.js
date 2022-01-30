@@ -215,7 +215,7 @@ const message_option =
     }
 
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         validateInputs();
         gsap.to(".contact__message-complete", {opacity: 0, duration: 1});
         gsap.to(".contact__message-error", {opacity: 0, duration: 1});
