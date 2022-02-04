@@ -871,6 +871,11 @@
   margin: 0;
 }
 
+input[type=submit] {
+  -webkit-border-radius:0px;
+  border-radius: 0;
+}
+
 body {
   font-family: "Mulish", sans-serif;
   background: #f2f2f2;

@@ -16,6 +16,11 @@
     margin: 0;
 }
 
+input[type=submit] {
+    -webkit-border-radius:0px;
+    border-radius: 0;
+}
+
 body{
     font-family: $ff-ms;
     background: $bg-color;
