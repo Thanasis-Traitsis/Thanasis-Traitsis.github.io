@@ -232,7 +232,7 @@ const message_option =
             gsap.to(".contact__box", {opacity: 0, duration: 1});
             gsap.to(".contact__after", {opacity: 1, duration: 1});
             gsap.to(".contact__input", {disabled: "disabled"});
-            formButton.disabled = true;
+            gsap.to(".contact__btn", {disabled: true});
         }
     });  
 
