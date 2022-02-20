@@ -54,6 +54,7 @@
         border: 1px solid $primary-color;
         border-bottom: none;
         position: relative;
+        opacity: 1;
     }
 
     &__input{
@@ -101,6 +102,8 @@
         text-decoration: none;
         letter-spacing: 1px;
         border: 1px solid $primary-color;
+        -webkit-appearance: none;
+        border-radius: 0;
         cursor: pointer;
 
         &:hover{
@@ -142,6 +145,20 @@
     //     }
     // }
 
+    &__after{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 69%;
+        border: 1px solid $primary-color;
+        padding: 1rem;
+        opacity: 0;
+
+        p{
+            font-style: italic;
+        }
+    }
+
     &__message-error{
         position: absolute;
         font-style: italic;
@@ -163,4 +180,5 @@
         opacity: 1;
         font-size: 1.1rem;
     }
+
 }

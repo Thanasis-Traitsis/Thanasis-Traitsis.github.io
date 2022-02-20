@@ -164,7 +164,7 @@ const validsvg = document.querySelectorAll(".contact__validation-tick");
 const message_option = 
 [ "Please check if you miss a field.",
     "Please check if all the fields are correct.",
-        "Thanks for reaching out. You will hear from me as soon as possible."];
+        "You succesfully submitted the form."];
 
     containers.forEach((container) =>{
         const input = container.querySelector(".contact__input");
@@ -214,22 +214,24 @@ const message_option =
         }
     }
 
+    var count;
+
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
         validateInputs();
         gsap.to(".contact__message-complete", {opacity: 0, duration: 1});
         gsap.to(".contact__message-error", {opacity: 0, duration: 1});
         if(!formIsValid){
             gsap.to(".contact__message-error", {opacity: 1, duration: 1});
-            // e.preventDefault();
+            e.preventDefault();
         } 
         else{
             msgComplete.innerHTML = message_option[2];
             gsap.to(".contact__message-error", {opacity: 0, duration: 1});
             gsap.to(".contact__message-complete", {opacity: 1, duration: 1});
-            form.reset();
             gsap.set(validsvg,  {opacity: 0, duration: 1});
-            return true;
+            gsap.to(".contact__box", {opacity: 0, duration: 1});
+            gsap.to(".contact__after", {opacity: 1, duration: 1});
+            formButton.disabled = true;
         }
     });  
 

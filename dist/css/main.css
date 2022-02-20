@@ -253,7 +253,7 @@
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
-  background-image: url("../img/home.png");
+  background-image: url("../img/thanasakosmou.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -691,6 +691,7 @@
   border: 1px solid #373F41;
   border-bottom: none;
   position: relative;
+  opacity: 1;
 }
 
 .contact__input {
@@ -740,6 +741,8 @@
   text-decoration: none;
   letter-spacing: 1px;
   border: 1px solid #373F41;
+  -webkit-appearance: none;
+  border-radius: 0;
   cursor: pointer;
 }
 
@@ -770,6 +773,20 @@
   height: 20px;
   fill: #ac4747;
   opacity: 0;
+}
+
+.contact__after {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 69%;
+  border: 1px solid #373F41;
+  padding: 1rem;
+  opacity: 0;
+}
+
+.contact__after p {
+  font-style: italic;
 }
 
 .contact__message-error {
@@ -872,7 +889,6 @@
 }
 
 input[type=submit] {
-  -webkit-border-radius:0px;
   border-radius: 0;
 }
 
@@ -1371,7 +1387,7 @@ body {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1/3;
-    background-image: url("../img/home.png");
+    background-image: url("/dist/img/thanasakosmou.png");
     background-size: cover;
     background-repeat: no-repeat;
     width: auto;
@@ -1485,7 +1501,7 @@ body {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1/3;
-    background: url("../img/about 2.png") center top;
+    background: url("/dist/img/about 2.png") center top;
     background-repeat: no-repeat;
     width: auto;
     height: auto;
@@ -1699,6 +1715,7 @@ body {
     border: 1px solid #373F41;
     border-bottom: none;
     font-size: 1.2rem;
+    opacity: 1;
   }
   .contact__box:nth-child(2) {
     border-left: none;
@@ -1781,6 +1798,27 @@ body {
   .contact__validation-false {
     width: 28px;
     height: 28px;
+  }
+  .contact__after {
+    position: absolute;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1/6;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    grid-row: 2/4;
+    width: 100%;
+    bottom: 0;
+    height: 91.3%;
+    border: 1px solid #373F41;
+    padding: 1rem;
+    opacity: 0;
+  }
+  .contact__after h1 {
+    font-size: 2.4rem;
+  }
+  .contact__after p {
+    font-size: 1.2rem;
   }
   .contact__message-error {
     position: absolute;

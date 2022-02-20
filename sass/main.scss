@@ -17,7 +17,7 @@
 }
 
 input[type=submit] {
-    -webkit-border-radius:0px;
+    -webkit-border-radius:0;
     border-radius: 0;
 }
 
@@ -906,6 +906,7 @@ body{
             border: 1px solid $primary-color;
             border-bottom: none;
             font-size: $fs-p2;
+            opacity: 1;
 
             &:nth-child(2){
                 border-left: none;
@@ -991,6 +992,26 @@ body{
         &__validation-false{
             width: 28px;
             height: 28px;
+        }
+
+        &__after{
+            position: absolute;
+            grid-column: 1/6;
+            grid-row: 2/4;
+            width: 100%;
+            bottom: 0;
+            height: 91.3%;
+            border: 1px solid $primary-color;
+            padding: 1rem;
+            opacity: 0;
+
+            h1{
+                font-size: $fs-h2;
+            }
+
+            p{
+                font-size: $fs-p2;
+            }
         }
     
         &__message-error{
