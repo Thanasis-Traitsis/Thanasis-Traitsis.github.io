@@ -306,6 +306,7 @@ window.onload = emptyTextarea;
 //   observer.observe(document.querySelector('.skills__heading-line'));
 //   observer.observe(document.querySelector('.contact__heading-line'));
     
+window.onbeforeunload = function() { window.scrollTo(0,0); }
 
     
 
