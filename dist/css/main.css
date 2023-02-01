@@ -606,7 +606,7 @@
   font-size: 1.8rem;
 }
 
-.skills__item:last-child::before {
+.skills__item:nth-child(5)::before {
   content: '';
   position: absolute;
   bottom: -1em;
@@ -615,11 +615,49 @@
   background: #373F41;
 }
 
-.skills__item:last-child::after {
+.skills__item:nth-child(5)::after {
   content: '87%';
   position: absolute;
   bottom: -.4em;
   left: 82%;
+  font-family: "Playfair Display";
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+}
+
+.skills__item:nth-child(6)::before {
+  content: '';
+  position: absolute;
+  bottom: -1em;
+  width: 80%;
+  height: 3px;
+  background: #373F41;
+}
+
+.skills__item:nth-child(6)::after {
+  content: '80%';
+  position: absolute;
+  bottom: -.4em;
+  left: 75%;
+  font-family: "Playfair Display";
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+}
+
+.skills__item:last-child::before {
+  content: '';
+  position: absolute;
+  bottom: -1em;
+  width: 75%;
+  height: 4px;
+  background: #373F41;
+}
+
+.skills__item:last-child::after {
+  content: '75%';
+  position: absolute;
+  bottom: -.4em;
+  left: 70%;
   font-family: "Playfair Display";
   letter-spacing: 1px;
   font-size: 1.8rem;
@@ -1105,7 +1143,8 @@ body {
     letter-spacing: 1px;
     font-size: 2rem;
   }
-  .skills__item:last-child::before {
+
+  .skills__item:nth-child(5)::before {
     content: '';
     position: absolute;
     bottom: -1em;
@@ -1113,11 +1152,47 @@ body {
     height: 4px;
     background: #373F41;
   }
-  .skills__item:last-child::after {
+  .skills__item:nth-child(5)::after {
     content: '87%';
     position: absolute;
     bottom: -.4em;
     left: 82%;
+    font-family: "Playfair Display";
+    letter-spacing: 1px;
+    font-size: 2rem;
+  }
+
+  .skills__item:nth-child(6)::before {
+    content: '';
+    position: absolute;
+    bottom: -1em;
+    width: 80%;
+    height: 3px;
+    background: #373F41;
+  }
+  .skills__item:nth-child(6)::after {
+    content: '80%';
+    position: absolute;
+    bottom: -.4em;
+    left: 75%;
+    font-family: "Playfair Display";
+    letter-spacing: 1px;
+    font-size: 2rem;
+  }
+  
+  .skills__item:last-child::before {
+    content: '';
+    position: absolute;
+    bottom: -1em;
+    width: 75%;
+    height: 4px;
+    background: #373F41;
+  }
+  .skills__item:last-child::after {
+    content: '75%';
+    position: absolute;
+    bottom: -.4em;
+    left: 70%;
     font-family: "Playfair Display";
     letter-spacing: 1px;
     font-size: 2rem;
@@ -1628,7 +1703,8 @@ body {
     letter-spacing: 1px;
     font-size: 2.4rem;
   }
-  .skills__item:last-child::before {
+
+  .skills__item:nth-child(5)::before {
     content: '';
     position: absolute;
     bottom: -1em;
@@ -1636,11 +1712,45 @@ body {
     height: 4px;
     background: #373F41;
   }
-  .skills__item:last-child::after {
+  .skills__item:nth-child(5)::after {
     content: '87%';
     position: absolute;
     bottom: -.3em;
     left: 82%;
+    font-family: "Playfair Display";
+    letter-spacing: 1px;
+    font-size: 2.4rem;
+  }
+  .skills__item:nth-child(6)::before {
+    content: '';
+    position: absolute;
+    bottom: -1em;
+    width: 80%;
+    height: 3px;
+    background: #373F41;
+  }
+  .skills__item:nth-child(6)::after {
+    content: '80%';
+    position: absolute;
+    bottom: -.4em;
+    left: 75%;
+    font-family: "Playfair Display";
+    letter-spacing: 1px;
+    font-size: 2.4rem;
+  }
+  .skills__item:last-child::before {
+    content: '';
+    position: absolute;
+    bottom: -1em;
+    width: 75%;
+    height: 4px;
+    background: #373F41;
+  }
+  .skills__item:last-child::after {
+    content: '75%';
+    position: absolute;
+    bottom: -.3em;
+    left: 70%;
     font-family: "Playfair Display";
     letter-spacing: 1px;
     font-size: 2.4rem;
