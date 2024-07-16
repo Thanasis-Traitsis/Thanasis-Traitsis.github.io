@@ -54,7 +54,7 @@
         </p>
       </div>
       <div class="ml-10 mb-8">
-        <img id="welcome_img" src="../../../assets/images/home_image.png" />
+        <img id="welcome_img" src="../../../../public/images/home_image.png" />
       </div>
     </div>
   </div>

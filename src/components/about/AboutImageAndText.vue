@@ -72,7 +72,7 @@
         <img
           id="about_img"
           class="w-full xl:max-w-[550px] xl:ml-auto"
-          src="./../../assets/images/about_image.png"
+          src="./../../../public/images/about_image.png"
           alt=""
         />
       </div>
