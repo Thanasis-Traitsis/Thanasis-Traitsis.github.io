@@ -1,0 +1,121 @@
+.home{
+    font-family: $ff-pd;
+    letter-spacing: 1px;
+    
+
+    &__container{
+        grid-template-columns: minmax(0, auto) minmax(50px, 100px) 223px;
+        grid-template-rows: 340px 1fr;
+
+    }
+
+    &__img{
+        grid-column: 3/4;
+        grid-row: 1/2;
+        background-image: url("../img/home.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%; 
+        height: 100%;
+        opacity: 0;
+        z-index: -1;
+        animation: fadeIn 1.5s ease-in forwards 2.2s;
+
+        @keyframes fadeIn {
+            100%{
+                opacity: 1;
+            }
+        }
+    }
+
+    &__content{
+        grid-column: 2/4;
+        grid-row: 1/2;
+        margin-top: auto;
+        margin-bottom: 2em;
+        margin-left: 1em;
+    }
+
+    &__subtitle{
+        font-size: $fs-h4;
+        font-weight: $fw-n;
+    }
+
+    &__title{
+        font-size: $fs-h2;
+        font-weight: $fw-b;
+
+        &:last-child{
+            margin-left: .5em;
+        }
+    }
+
+    &__heading{
+        grid-column: 1/4;
+        grid-row: 2/3;
+        margin-top: 8em;
+        
+        &-title{
+            font-size: $fs-huge;
+            font-weight: $fw-xb;
+        }
+    }
+
+
+    .line1{
+        width: 200px;
+        height: 1px;
+        background: $primary-color;
+        grid-column: 2/4;
+        grid-row: 1/2;
+        margin-top: auto;
+        margin-bottom: 10%;
+        margin-left: -15px;
+        transform: scaleX(0);
+        transform-origin: right;
+        animation: move-left 1.2s ease-in forwards;
+
+        @keyframes move-left {
+            100%{
+                transform: scaleX(1);
+            }
+        }
+
+    }
+
+    .line2{
+        width: 1px;
+        height: 320px;
+        background: $primary-color;
+        grid-column: 2/4;
+        grid-row: 1/2;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: -50px;
+        transform: scaleY(0);
+        transform-origin: top;
+        animation: move-left 1.2s ease-in forwards 1s;
+
+        @keyframes move-bottom {
+            100%{
+                transform: scaleY(1);
+            }
+        }
+    }
+
+    p{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        margin-top: auto;
+        margin-left: -120px;
+        transform: rotate(-90deg);
+        font-size: $fs-small;
+        font-family: $ff-ms;
+        font-weight: $fw-n;
+        font-style: italic;
+        letter-spacing: 5px;
+        opacity: .8;
+        pointer-events: none;
+    }
+
+}
