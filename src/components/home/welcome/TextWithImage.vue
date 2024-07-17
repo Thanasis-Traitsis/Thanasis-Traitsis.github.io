@@ -90,7 +90,7 @@
     background: var(--primary-color);
     height: 1px;
     width: 150%;
-    bottom: 0;
+    bottom: -5px;
     left: -30%;
     transform-origin: bottom right;
   }

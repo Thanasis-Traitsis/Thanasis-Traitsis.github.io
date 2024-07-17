@@ -1,15 +1,15 @@
 [
     {
       "id": 1,
-      "iconUrl": "../../../public/icons/github-icon.png",
-      "iconUrlDark": "../../../public/icons/github-dark-icon.png",
+      "iconUrl": "../../icons/github-icon.png",
+      "iconUrlDark": "../../icons/github-dark-icon.png",
       "iconText": "Github",
       "iconLink": "https://github.com/Thanasis-Traitsis"
     },
     {
       "id": 2,
-      "iconUrl": "../../../public/icons/linkedin-icon.png",
-      "iconUrlDark": "../../../public/icons/linked-dark-icon.png",
+      "iconUrl": "../../icons/linkedin-icon.png",
+      "iconUrlDark": "../../icons/linked-dark-icon.png",
       "iconText": "Linkedin",
       "iconLink": "https://www.linkedin.com/in/thanasis-traitsis/"
     }

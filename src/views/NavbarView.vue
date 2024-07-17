@@ -9,22 +9,34 @@
 
   let showMenu = ref(false);
 
-  const toggleNav = () => {
+  // PREVENT MULTIPLE CLICKS DURING ANIMATION
+  let clicksDisabled = false;
+
+  const toggleNav = (isBurgerIcon) => {
+    if (clicksDisabled) return; // Prevent clicks during the animation
+
+    clicksDisabled = true;
+
     if (!showMenu.value) {
       openMenu();
     } else {
-      closeMenu();
+      closeMenu(isBurgerIcon);
     }
+
+    setTimeout(() => {
+      clicksDisabled = false;
+    }, 1000); // Re-enable clicks after 1 second
   };
 
-  // FULL SCREEN MENU ANIMATION
-  const closeMenu = () => {
+  // FULL SCREEN MENU ANIMATIONS
+
+  const closeMenu = (isBurger) => {
     gsap.to(".menu", {
       right: "-100%",
       duration: 0.5,
-      delay: 0.5,
+      delay: isBurger ? 0 : 0.5,
       onComplete: () => {
-        showMenu.value = !showMenu.value;
+        showMenu.value = false;
         document.body.style.overflow = "";
       },
     });
@@ -34,9 +46,8 @@
     gsap.to(".menu", {
       right: "0",
       duration: 0.5,
-      delay: 0.5,
       onComplete: () => {
-        showMenu.value = !showMenu.value;
+        showMenu.value = true;
         document.body.style.overflow = "hidden";
       },
     });
@@ -49,11 +60,14 @@
   >
     <HomeLogo />
     <div class="md:hidden z-10">
-      <BurgerIcon @click="toggleNav" :showMenu="showMenu" />
+      <BurgerIcon @click="toggleNav(true)" :showMenu="showMenu" />
     </div>
     <NavbarItems />
   </header>
-  <FullScreenMenu :showMenu="showMenu" @clickFullScreenLink="toggleNav" />
+  <FullScreenMenu
+    :showMenu="showMenu"
+    @clickFullScreenLink="toggleNav(false)"
+  />
 </template>
 
 <style scoped>
