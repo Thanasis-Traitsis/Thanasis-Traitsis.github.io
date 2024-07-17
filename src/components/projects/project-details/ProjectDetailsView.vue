@@ -1,5 +1,5 @@
 <script setup>
-  import projectsData from "./../../../assets/json/projects-content.json";
+  import projectsData from "./../../../../public/assets/json/projects-content.json";
   import ProjectTitle from "./ProjectTitle.vue";
   import ProjectDetailsContainer from "./ProjectDetailsContainer.vue";
   import ProjectBannerContainer from "./ProjectBannerContainer.vue";

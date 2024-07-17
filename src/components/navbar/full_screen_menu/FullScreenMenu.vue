@@ -1,14 +1,21 @@
 <script setup>
-  import { defineProps } from "vue";
+  import { defineProps, defineEmits } from "vue";
   import FullScreenMenuLinks from "./FullScreenMenuLinks.vue";
   import FullScreenMenuSocials from "./FullScreenMenuSocials.vue";
 
   let { showMenu } = defineProps(["showMenu"]);
+
+  const emit = defineEmits(["clickFullScreenLink"]);
+
+  const handleLinkClick = () => {
+    emit("clickFullScreenLink");
+  };
 </script>
 
 <template>
-  <div :class="showMenu ? 'right-[0]' : 'right-[-100%]'" class="menu">
-    <FullScreenMenuLinks />
+  <!-- <div :class="showMenu ? 'right-[0]' : 'right-[-100%]'" class="menu"> -->
+  <div class="menu right-[-100%]">
+    <FullScreenMenuLinks @clickFullScreenLink="handleLinkClick" />
     <FullScreenMenuSocials />
   </div>
 </template>

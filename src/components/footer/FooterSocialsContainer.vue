@@ -1,5 +1,5 @@
 <script setup>
-  import socialIcons from "./../../assets/json/social-icons.json";
+  import socialIcons from "./../../../public/assets/json/social-icons.json";
 </script>
 
 <template>

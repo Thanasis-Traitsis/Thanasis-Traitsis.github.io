@@ -1,5 +1,6 @@
 <script setup>
   import { ref } from "vue";
+  import gsap from "gsap";
 
   import BurgerIcon from "../components/navbar/BurgerIcon.vue";
   import HomeLogo from "../components/navbar/HomeLogo.vue";
@@ -9,12 +10,36 @@
   let showMenu = ref(false);
 
   const toggleNav = () => {
-    showMenu.value = !showMenu.value;
-    if (showMenu.value) {
-      document.body.style.overflow = "hidden";
+    if (!showMenu.value) {
+      openMenu();
     } else {
-      document.body.style.overflow = "";
+      closeMenu();
     }
+  };
+
+  // FULL SCREEN MENU ANIMATION
+  const closeMenu = () => {
+    gsap.to(".menu", {
+      right: "-100%",
+      duration: 0.5,
+      delay: 0.5,
+      onComplete: () => {
+        showMenu.value = !showMenu.value;
+        document.body.style.overflow = "";
+      },
+    });
+  };
+
+  const openMenu = () => {
+    gsap.to(".menu", {
+      right: "0",
+      duration: 0.5,
+      delay: 0.5,
+      onComplete: () => {
+        showMenu.value = !showMenu.value;
+        document.body.style.overflow = "hidden";
+      },
+    });
   };
 </script>
 
@@ -28,7 +53,7 @@
     </div>
     <NavbarItems />
   </header>
-  <FullScreenMenu :showMenu="showMenu" />
+  <FullScreenMenu :showMenu="showMenu" @clickFullScreenLink="toggleNav" />
 </template>
 
 <style scoped>

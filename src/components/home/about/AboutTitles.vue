@@ -1,6 +1,6 @@
 <script setup>
   import { computed } from "vue";
-  import aboutTitles from "../../../assets/json/about-titles.json";
+  import aboutTitles from "../../../../public/assets/json/about-titles.json";
 
   const allAboutTitles = computed(() => {
     return aboutTitles

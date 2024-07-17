@@ -1,5 +1,5 @@
 <script setup>
-  import jobTitles from "../../../assets/json/job-title.json";
+  import jobTitles from "../../../../public/assets/json/job-title.json";
 </script>
 
 <template>

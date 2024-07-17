@@ -1,15 +1,28 @@
 <script setup>
-  import { defineProps } from "vue";
-  import { RouterLink } from "vue-router";
+  import { defineProps, defineEmits } from "vue";
+  import { RouterLink, useRoute } from "vue-router";
 
   const { text, route } = defineProps(["text", "route"]);
+  const currentRoute = useRoute();
+
+  const emit = defineEmits(["clickFullScreenLink"]);
+
+  const handleLinkClick = () => {
+    if (currentRoute.path !== route) {
+      emit("clickFullScreenLink");
+    }
+  };
 </script>
 
 <template>
   <div>
-    <RouterLink class="full-nav-item" active-class="active" :to="route">{{
-      text
-    }}</RouterLink>
+    <RouterLink
+      class="full-nav-item"
+      active-class="active"
+      :to="route"
+      @click="handleLinkClick"
+      >{{ text }}</RouterLink
+    >
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <script setup>
-  import projectsData from "./../../assets/json/projects-content.json";
+  import projectsData from "./../../../public/assets/json/projects-content.json";
   import ProjectListItem from "../ProjectListItem.vue";
 
   const projectsList = projectsData.projectsList;

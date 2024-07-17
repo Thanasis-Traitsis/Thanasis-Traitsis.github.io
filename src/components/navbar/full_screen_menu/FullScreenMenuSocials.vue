@@ -1,11 +1,11 @@
 <script setup>
-  import socialIcons from "../../../assets/json/social-icons.json";
+  import socialIcons from "../../../../public/assets/json/social-icons.json";
 </script>
 
 <template>
   <div class="flex flex-col">
     <div class="text-above-line">
-      <p>socials .</p>
+      <p>socials.</p>
     </div>
     <div class="menu-line"></div>
     <div class="flex flex-row gap-4 mt-2">

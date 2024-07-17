@@ -1,5 +1,5 @@
 <script setup>
-  import contactForm from "./../../assets/json/contact-form.json";
+  import contactForm from "./../../../public/assets/json/contact-form.json";
   import EmailWithSendButton from "./EmailWithSendButton.vue";
   import { ref } from "vue";
 

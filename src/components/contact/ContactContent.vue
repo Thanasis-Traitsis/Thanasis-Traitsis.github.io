@@ -1,5 +1,5 @@
 <script setup>
-  import contactContent from "./../../assets/json/contact-content.json";
+  import contactContent from "./../../../public/assets/json/contact-content.json";
 </script>
 
 <template>

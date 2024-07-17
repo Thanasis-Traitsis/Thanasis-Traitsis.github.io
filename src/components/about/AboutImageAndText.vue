@@ -1,5 +1,5 @@
 <script setup>
-  import aboutText from "./../../assets/json/about-content.json";
+  import aboutText from "./../../../public/assets/json/about-content.json";
   import { onMounted } from "vue";
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
