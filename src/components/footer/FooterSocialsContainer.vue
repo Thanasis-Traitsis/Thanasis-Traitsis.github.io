@@ -13,7 +13,7 @@
         :key="icon.id"
         class="footer-social-icon hover-icon"
       >
-        <a :href="icon.iconLink">
+        <a :href="icon.iconLink" target="_blank">
           <img :src="icon.iconUrl" :alt="icon.iconText" />
         </a>
       </div>

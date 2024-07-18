@@ -10,7 +10,7 @@
     <div class="menu-line"></div>
     <div class="flex flex-row gap-4 mt-2">
       <div v-for="icon in socialIcons" :key="icon.id" class="social-icon hover-icon">
-        <a :href="icon.iconLink">
+        <a :href="icon.iconLink" target="_blank">
           <img :src="icon.iconUrl" :alt="icon.iconText" />
         </a>
       </div>

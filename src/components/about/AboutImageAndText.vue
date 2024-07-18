@@ -23,7 +23,6 @@
     const aboutImgAnimation = sessionStorage.getItem("aboutImgAnimation");
 
     if (!aboutImgAnimation) {
-
       let mm = gsap.matchMedia();
 
       mm.add("(max-width: 1279px)", () => {
@@ -53,11 +52,7 @@
               scrub: false,
             },
           })
-          .fromTo(
-            "#about_img",
-            { x: "-100vw" },
-            { x: 0, duration: 1.5,}
-          );
+          .fromTo("#about_img", { x: "-100vw" }, { x: 0, duration: 1.5 });
       });
 
       sessionStorage.setItem("aboutImgAnimation", "true");
@@ -103,8 +98,11 @@
             tutorials, tips, and insights from my own projects and challenges.
             If you believe that could be helpful to you, all my articles can be
             found on both
-            <a href="https://dev.to/thanasistraitsis">DEV.to</a> and
-            <a href="https://sudorealm.com/blog/profile/thanasis-traitsis"
+            <a href="https://dev.to/thanasistraitsis" target="_blank">DEV.to</a>
+            and
+            <a
+              href="https://sudorealm.com/blog/profile/thanasis-traitsis"
+              target="_blank"
               >Sudorealm</a
             >.
           </p>

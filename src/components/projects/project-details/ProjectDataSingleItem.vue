@@ -18,7 +18,10 @@
     </div>
     <div v-else>
       <div v-for="value in dataValue" class="project-details mt-2 list-values">
-        <p class="text-end">{{ value.creditsRole }} : {{ value.creditsTo }}</p>
+        <p class="text-end">
+          {{ value.creditsRole }} :
+          <a id="credits_link" :href="value.creditsLink" target="_blank">{{ value.creditsTo }}</a>
+        </p>
       </div>
     </div>
   </div>
@@ -36,5 +39,9 @@
 
   .list-values:first-child {
     margin-top: 0px !important;
+  }
+
+  #credits_link {
+    text-decoration: underline;
   }
 </style>
