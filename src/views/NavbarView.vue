@@ -10,12 +10,12 @@
   let showMenu = ref(false);
 
   // PREVENT MULTIPLE CLICKS DURING ANIMATION
-  let clicksDisabled = false;
+  let clicksDisabled = ref(false);
 
   const toggleNav = (isBurgerIcon) => {
-    if (clicksDisabled) return; // Prevent clicks during the animation
+    if (clicksDisabled.value) return;
 
-    clicksDisabled = true;
+    clicksDisabled.value = true;
 
     if (!showMenu.value) {
       openMenu();
@@ -24,30 +24,31 @@
     }
 
     setTimeout(() => {
-      clicksDisabled = false;
-    }, 1000); // Re-enable clicks after 1 second
+      clicksDisabled.value = false;
+    }, 1000);
   };
 
   // FULL SCREEN MENU ANIMATIONS
 
   const closeMenu = (isBurger) => {
+    showMenu.value = false;
     gsap.to(".menu", {
       right: "-100%",
       duration: 0.5,
       delay: isBurger ? 0 : 0.5,
       onComplete: () => {
-        showMenu.value = false;
         document.body.style.overflow = "";
       },
     });
   };
 
   const openMenu = () => {
+    showMenu.value = true;
     gsap.to(".menu", {
       right: "0",
       duration: 0.5,
+      delay: 0.3,
       onComplete: () => {
-        showMenu.value = true;
         document.body.style.overflow = "hidden";
       },
     });
@@ -65,6 +66,7 @@
     <NavbarItems />
   </header>
   <FullScreenMenu
+    :class="clicksDisabled ? 'pointer-events-none' : 'pointer-events-auto'"
     :showMenu="showMenu"
     @clickFullScreenLink="toggleNav(false)"
   />
