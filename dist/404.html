@@ -5,10 +5,20 @@
     <link rel="icon" href="/assets/light_logo-CNfn48JN.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thanasis Traitsis</title>
-    <script type="module" crossorigin src="/assets/index-Dy0xXM1G.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-D3WcEhM0.css">
+    <script>
+      const pathSegmentsToKeep = 0;
+      const l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + 
+        '/?/' + 
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
   </head>
-  <bod>
-    <div id="app"></div>
-  </bod>
+  <body>
+    <div>Redirecting...</div>
+  </body>
 </html>
