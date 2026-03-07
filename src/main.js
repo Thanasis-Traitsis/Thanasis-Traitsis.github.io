@@ -1,12 +1,23 @@
-import './assets/main.css'
-
 import { createApp } from 'vue'
-
 import App from './App.vue'
-import router from "./router";
+import router from './router'
 import './index.css'
+import { validateEnv } from './config/env'
 
-const app = createApp(App);
+// Validate environment variables before app initialization
+try {
+  validateEnv()
+} catch (error) {
+  console.error('Environment validation failed:', error.message)
+  document.body.innerHTML = `
+    <div style="padding: 2rem; font-family: sans-serif;">
+      <h1>Configuration Error</h1>
+      <p>${error.message}</p>
+    </div>
+  `
+  throw error
+}
 
-app.use(router);
-app.mount("#app");
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
