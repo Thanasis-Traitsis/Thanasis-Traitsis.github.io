@@ -1,9 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: [
+    './index.html',
+    './src/**/*.{vue,js,ts,jsx,tsx}',
+  ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Mulish', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
+      },
+      colors: {
+        accent: {
+          DEFAULT: '#3B82F6', // Modern blue
+          hover: '#2563EB', // Darker blue for hover
+        },
+      },
+    },
   },
   plugins: [],
 }
