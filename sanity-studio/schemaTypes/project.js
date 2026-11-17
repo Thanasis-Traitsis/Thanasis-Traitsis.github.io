@@ -58,7 +58,7 @@ export default {
       name: 'privacyPolicyUrl',
       title: 'Privacy Policy URL',
       type: 'url',
-      description: 'Link to the privacy policy page (if applicable)'
+      description: 'External privacy policy link, used when no Privacy Policy Content is provided'
     },
     {
       name: 'privacyPolicy',
@@ -110,9 +110,35 @@ export default {
     {
       name: 'credits',
       title: 'Credits',
-      type: 'text',
-      rows: 3,
-      description: 'Acknowledge collaborators or contributors'
+      type: 'array',
+      description: 'Acknowledge collaborators or contributors',
+      of: [
+        {
+          type: 'object',
+          name: 'credit',
+          title: 'Credit',
+          fields: [
+            {
+              name: 'name',
+              title: 'Name',
+              type: 'string',
+              validation: Rule => Rule.required()
+            },
+            {
+              name: 'url',
+              title: 'URL',
+              type: 'url',
+              description: 'Optional link to their LinkedIn or website'
+            }
+          ],
+          preview: {
+            select: {
+              title: 'name',
+              subtitle: 'url'
+            }
+          }
+        }
+      ]
     },
     {
       name: 'images',

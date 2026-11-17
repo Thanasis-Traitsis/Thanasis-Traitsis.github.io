@@ -53,12 +53,6 @@
           <div v-if="project.fullDescription">
             <PortableText :blocks="project.fullDescription" />
           </div>
-
-          <!-- Credits -->
-          <div v-if="project.credits" class="border-t border-gray-200 pt-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Credits</h2>
-            <p class="text-gray-600 whitespace-pre-line">{{ project.credits }}</p>
-          </div>
         </div>
 
         <!-- Sidebar -->
@@ -115,6 +109,28 @@
             </div>
           </div>
 
+          <!-- Credits -->
+          <div v-if="credits.length > 0">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 font-serif">Credits</h3>
+            <ul class="space-y-2">
+              <li v-for="(credit, index) in credits" :key="index">
+                <a
+                  v-if="credit.url"
+                  :href="credit.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-900 hover:text-gray-600 underline transition-colors inline-flex items-center gap-1"
+                >
+                  {{ credit.name }}
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+                <span v-else class="text-gray-900">{{ credit.name }}</span>
+              </li>
+            </ul>
+          </div>
+
           <!-- Project Info -->
           <div class="border-t border-gray-200 pt-8">
             <h3 class="text-xl font-bold text-gray-900 mb-4 font-serif">Project Info</h3>
@@ -139,6 +155,22 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
                   </router-link>
+                </dd>
+              </div>
+              <div v-else-if="project.privacyPolicyUrl">
+                <dt class="text-sm text-gray-500 uppercase tracking-wide mb-1">Privacy Policy</dt>
+                <dd>
+                  <a
+                    :href="project.privacyPolicyUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-900 hover:text-gray-600 underline transition-colors inline-flex items-center gap-1"
+                  >
+                    View Policy
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
                 </dd>
               </div>
             </dl>
@@ -316,6 +348,12 @@ watch(projectSlug, (newSlug) => {
 
 // Refetch function for error retry
 const refetch = () => fetchProject(projectSlug.value)
+
+// Older projects stored credits as plain text; skip that until it is re-entered in the new format
+const credits = computed(() => {
+  const value = project.value?.credits
+  return Array.isArray(value) ? value.filter(credit => credit?.name) : []
+})
 
 // Find the next project
 const nextProject = computed(() => {

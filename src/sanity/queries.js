@@ -27,6 +27,7 @@ export const projectBySlugQuery = `
     date,
     platformAvailability,
     privacyPolicy,
+    privacyPolicyUrl,
     techStack,
     credits,
     images,
